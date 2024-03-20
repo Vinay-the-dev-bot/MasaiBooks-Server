@@ -14,7 +14,7 @@ const ordersModel = mongoose.model("orders", ordersSchema);
 
 module.exports = { ordersModel };
 // {
-// 	 user : "65fa82ddf61650f5fbb4415d"
-// 	 books : ["65fa8523a9dbfbb02ca0cce9","65fa8523a9dbfbb02ca0cce9"],
-// 	 totalAmount: 150000
+// 	 "user" : "65faa986b14192eb21b6864e",
+// 	 "books" : ["65fa85958dc69afd77ba878b","65fa950e3dfa5a781e2b0a51"],
+// 	 "totalAmount": 2000
 // }

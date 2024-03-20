@@ -62,7 +62,7 @@ apiEndPoints.post("/register", (req, res) => {
         try {
           const user = new userModel({ ...req.body, password: hash });
           await user.save();
-          res.status(201).send({ msg: "USER REGISTERED", USER: user });
+          res.status(201).send({ msg: "USER REGISTERED" });
         } catch (error) {
           res.status(400).send({ msg: `${error}` });
         }

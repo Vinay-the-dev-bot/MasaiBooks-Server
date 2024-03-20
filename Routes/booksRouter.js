@@ -48,7 +48,7 @@ const dotenv = require("dotenv").config();
  *                   type: string
  *                   example: Please provide correct Id
  */
-booksRouter.get("/", auth, async (req, res) => {
+booksRouter.get("/", async (req, res) => {
   const books = await booksModel.find(req.query);
   res.status(200).send({ books });
 });
