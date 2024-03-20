@@ -9,6 +9,7 @@ const auth = async (req, res, next) => {
       if (decoded) {
         const user = await userModel.findOne({ _id: decoded.id });
         req.body.userId = decoded.id;
+        req.body.isAdmin = user.isAdmin;
         next();
       } else {
         res.send({ msg: "Not Authorized" });
