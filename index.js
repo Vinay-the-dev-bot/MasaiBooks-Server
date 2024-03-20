@@ -8,8 +8,6 @@ const cors = require("cors");
 app.use(cors());
 
 app.use(express.json());
-app.use("/users", userRouter);
-app.use("/notes", notesRouter);
 
 app.get("/", (req, res) => {
   res.send("HOME");
