@@ -10,6 +10,27 @@ const { booksRouter } = require("./Routes/booksRouter");
 const { apiEndPoints } = require("./Routes/endPoints");
 app.use(cors());
 
+const swaggerJSDoc = require("swagger-jsdoc");
+const swaggerUi = require("swagger-ui-express");
+
+const swaggerDefinition = {
+  openapi: "3.0.0",
+  info: {
+    title: "Express API for My Application",
+    version: "1.0.0",
+  },
+  servers: [{ url: "http://localhost:4500" }, { url: "http://exapm.com" }],
+};
+
+const options = {
+  swaggerDefinition,
+  apis: ["./Routes/*.js"],
+};
+
+const swaggerSpec = swaggerJSDoc(options);
+
+app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
 app.use(express.json());
 app.use("/api/books", booksRouter);
 app.use("/api", apiEndPoints);
