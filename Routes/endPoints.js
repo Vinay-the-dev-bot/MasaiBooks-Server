@@ -71,13 +71,13 @@ apiEndPoints.post("/login", async (req, res) => {
 // });
 
 // Reading all Orders
-apiEndPoints.get("/orders", async (req, res) => {
+apiEndPoints.get("/orders", auth, async (req, res) => {
   const orders = await ordersModel.find().populate("user").populate("books");
   res.status(200).send({ orders });
 });
 
 // Processing a Order
-apiEndPoints.post("/order", async (req, res) => {
+apiEndPoints.post("/order", auth, async (req, res) => {
   const book = new ordersModel({ ...req.body });
   await book.save();
   res.status(201).send({ msg: "Order Processed" });
