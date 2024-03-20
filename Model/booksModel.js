@@ -15,9 +15,9 @@ const booksModel = mongoose.model("books", booksSchema);
 
 module.exports = { booksModel };
 // {
-//   title: "Masai Way 101",
-//   author: "Masai School",
-//   category: "Editorial",
-//   price: 1000,
-//   quantity:100
+//   "title": "Masai Way 101",
+//   "author": "Masai School",
+//   "category": "Editorial",
+//   "price": 1000,
+//   "quantity":100
 // }
